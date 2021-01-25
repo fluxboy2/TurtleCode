@@ -1,6 +1,5 @@
 local keep_bot_going = true
 
-ihc_refuel()
 function ihc_refuel()
     print("test")
 end
