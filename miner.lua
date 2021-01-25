@@ -9,7 +9,6 @@ function SplitString (inputstr, sep)
     for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
             table.insert(t, str)
     end
-    print(textutils.serialize(t))
     return t
 end
 
