@@ -1,5 +1,6 @@
 keep_bot_going = true
 MAX_INV_SLOT_NUM = 16
+COAL_FUEL_AMOUNT = 80
 
 length = 0
 width = 0
@@ -43,7 +44,7 @@ function RefuelBot()
             item_name = SplitString(item.name, ":")[2]
             if item_name == "coal" then
                 print("Yep that's coal!")
-                print(volume .. " possible fuel.")
+                print(volume / COAL_FUEL_AMOUNT .. " possible coal needed.")
                 
             end
         end
