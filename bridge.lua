@@ -1,6 +1,6 @@
 turtle.select(2)
 
-keep_building = true
+local keep_building = true
 
 while turtle.getItemCount(2) ~= 0 and turtle.getFuelLevel() ~= 0 and keep_building do
 
