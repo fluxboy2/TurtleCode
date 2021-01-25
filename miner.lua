@@ -9,6 +9,7 @@ function SplitString (inputstr, sep)
     for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
             table.insert(t, str)
     end
+    print(textutils.serialize(t))
     return t
 end
 
@@ -18,7 +19,7 @@ function RefuelBot()
         local item = turtle.getItemDetail(i)
         if item ~= nil then
             item_name = SplitString(item.name, ":")
-            print(item_name.name)
+            print(item_name)
             print(item.name)
             if item_name == "coal" then
                 print("Yep that's coal!")
