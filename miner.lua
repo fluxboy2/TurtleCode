@@ -17,7 +17,9 @@ function RefuelBot()
     while i <= 16 do
         local item = turtle.getItemDetail(i)
         if item ~= nil then
-            print(textutils.serialize(SplitString(item.name, ":")))
+            if item[2] == "coal" then
+                print("Yep that's coal")
+            end
         end
         i = i + 1
     end
