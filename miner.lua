@@ -41,7 +41,7 @@ function RefuelBot()
             item_name = SplitString(item.name, ":")[2]
             if item_name == "coal" then
                 print("Yep that's coal!")
-                print(x .. " " .. y .. " " .. z)
+                print(width .. " " .. length .. " " .. height)
             end
         end
         i = i + 1
