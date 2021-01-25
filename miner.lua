@@ -9,7 +9,9 @@ function refuel_bot()
     local i = 1
     while i <= 16 do
         local item = turtle.getItemDetail(i)
-        print(item.name)
+        if item ~= nil then
+            print(item.name)
+        end
         i = i + 1
     end
 
