@@ -18,7 +18,7 @@ function RefuelBot()
         local item = turtle.getItemDetail(i)
         if item ~= nil then
             print(item[2])
-            if item[2] == "coal" then
+            if item[1] == "coal" then
                 print("Yep that's coal")
             end
         end
