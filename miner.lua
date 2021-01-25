@@ -19,6 +19,7 @@ function RefuelBot()
         if item ~= nil then
             local item_name = SplitString(item.name, ":")
             print(item_name)
+            print(item.name)
             if item_name == "coal" then
                 print("Yep that's coal!")
             end
