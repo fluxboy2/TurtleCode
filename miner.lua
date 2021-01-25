@@ -6,7 +6,7 @@ function refuel_bot()
 
     end
 
-    print(table.concat(turtle.getItemDetail(1)))
+    print(table.concat(turtle.getItemDetail(1)), ",")
 
     keep_bot_going = false
 end
