@@ -6,7 +6,7 @@ function refuel_bot()
 
     end
     print(textutils.serialize(turtle.getItemDetail(1)))
-    print(table.concat(turtle.getItemDetail(1)))
+    table.foreach(turtle.getItemDetail(1), function(k,v) print(string.rep(v,k)) end)
     
 
     keep_bot_going = false
