@@ -45,7 +45,7 @@ function RefuelBot()
             local coal_amount = volume / COAL_FUEL_AMOUNT
             if item_name == "coal" then
                 print("Yep that's coal!")
-                print(coal_amount .. " possible coal needed.")
+                print(math.ceil(coal_amount) .. " possible coal needed.")
                 
             end
         end
