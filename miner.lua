@@ -1,22 +1,26 @@
 local keep_bot_going = true
 fuel = 0
 MAX_INV_SLOT_NUM = 16
-function refuel_bot()
-    if turtle.getFuelLevel() <= 0 then
-
+function SplitString (inputstr, sep)
+    if sep == nil then
+            sep = "%s"
     end
-    
+    local t={}
+    for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
+            table.insert(t, str)
+    end
+    return t
+end
+
+function RefuelBot()
     local i = 1
     while i <= 16 do
         local item = turtle.getItemDetail(i)
         if item ~= nil then
-            print(item.name)
+            print(SplitString(item.name, ","))
         end
         i = i + 1
     end
-
-    print(textutils.serialize(turtle.getItemDetail(1)))
-    
 
     keep_bot_going = false
 end
@@ -25,5 +29,5 @@ end
 
 -- turtle loop
 while keep_bot_going do
-    refuel_bot()
+    RefuelBot()
 end
