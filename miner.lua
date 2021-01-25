@@ -42,9 +42,10 @@ function RefuelBot()
         local item = turtle.getItemDetail(i)
         if item ~= nil then
             item_name = SplitString(item.name, ":")[2]
+            local coal_amount = volume / COAL_FUEL_AMOUNT
             if item_name == "coal" then
                 print("Yep that's coal!")
-                print(volume / COAL_FUEL_AMOUNT .. " possible coal needed.")
+                print(coal_amount .. " possible coal needed.")
                 
             end
         end
