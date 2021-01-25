@@ -4,6 +4,7 @@ MAX_INV_SLOT_NUM = 16
 length = 0
 width = 0
 height = 0
+volume = 0
 -- start on start function
 
 function OnStart()
@@ -14,6 +15,7 @@ function OnStart()
     width = read()
     print("Please enter the height. Then press enter.")
     height = read()
+    volume = length * width* height
 end
 
 OnStart()
@@ -41,7 +43,8 @@ function RefuelBot()
             item_name = SplitString(item.name, ":")[2]
             if item_name == "coal" then
                 print("Yep that's coal!")
-                print(width .. " " .. length .. " " .. height)
+                print(volume .. " possible fuel.")
+                
             end
         end
         i = i + 1
