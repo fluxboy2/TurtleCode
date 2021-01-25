@@ -5,7 +5,7 @@ function refuel_bot()
     if turtle.getFuelLevel() <= 0 then
 
     end
-
+    print(turtle.getItemDetail(1))
     print(table.concat(turtle.getItemDetail(1)), ",")
 
     keep_bot_going = false
