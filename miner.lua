@@ -19,7 +19,7 @@ function RefuelBot()
         local item = turtle.getItemDetail(i)
         if item ~= nil then
             item_name = SplitString(item.name, ":")
-            print(item_name)
+            print(item_name[2])
             print(item.name)
             if item_name == "coal" then
                 print("Yep that's coal!")
