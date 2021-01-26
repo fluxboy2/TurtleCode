@@ -47,7 +47,7 @@ function RefuelBot()
             if item_name == "coal" then
                 turtle.select(i)
                 -- turtle.refuel(coal_amount)
-
+                print(needed_coal_amount)
                 turtle.select(1)
             end
         end
