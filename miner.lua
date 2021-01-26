@@ -43,11 +43,14 @@ function RefuelBot()
         if item ~= nil then
             item_name = SplitString(item.name, ":")[2]
             local coal_amount = math.ceil(volume / COAL_FUEL_AMOUNT)
-            local needed_coal_amount = turtle.getFuelLevel() / COAL_FUEL_AMOUNT
+            local needed_coal_amount = coal_amount - math.ceil(turtle.getFuelLevel() / COAL_FUEL_AMOUNT)
             if item_name == "coal" then
                 turtle.select(i)
                 -- turtle.refuel(coal_amount)
                 print(needed_coal_amount)
+                if needed_coal_amount > 0 then
+                    turtle.refuel(needed_coal_amount)
+                end
                 turtle.select(1)
             end
         end
