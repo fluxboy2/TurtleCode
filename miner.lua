@@ -59,8 +59,11 @@ function GoUp()
     end
 end
 function GoDown()
+    print("trying to Go down")
     if not turtle.down() then
-        if z == 0 then
+        print("turtle couldn't go down")
+        if z > 0 then
+            print("going down")
             turtle.digDown()
             turtle.down()
             z = z - 1
