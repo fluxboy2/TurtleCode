@@ -56,6 +56,8 @@ function GoUp()
             turtle.up()
             z = z + 1
         end
+    else
+        turtle.up()
     end
 end
 function GoDown()
@@ -68,6 +70,8 @@ function GoDown()
             turtle.down()
             z = z - 1
         end
+    else
+        turtle.down()
     end
 end
 function GoForward()
@@ -78,7 +82,7 @@ function GoForward()
 end
 
 function Mine()
-    GoDown()
+    GoUp()
     local success, block = turtle.inspectDown()
 
     if success then
