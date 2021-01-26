@@ -49,6 +49,7 @@ function FindMinMaxOfMiningZone()
     turtle.select(2)
     turtle.place()
     turtle.select(1)
+    turtle.attack()
 
     print(STARTING_BLOCK)
 
