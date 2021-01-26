@@ -6,6 +6,8 @@ length = 0
 width = 0
 height = 0
 volume = 0
+z = 0
+
 
 
 function SplitString (inputstr, sep)
@@ -31,7 +33,6 @@ function RefuelBot()
                 
                 if item_name == "coal" then
                     turtle.select(i)
-                    print(needed_coal_amount)
                     turtle.refuel(needed_coal_amount)
                     
                     turtle.select(1)
@@ -44,7 +45,37 @@ function RefuelBot()
     keep_bot_going = false
 end
 
+
+function GoRight()
+
+end
+function GoUp()
+    if not turtle.up() then
+        if z < height then
+            turtle.digUp()
+            turtle.up()
+            z = z + 1
+        end
+    end
+end
+function GoDown()
+    if not turtle.down() then
+        if z == 0 then
+            turtle.digDown()
+            turtle.down()
+            z = z - 1
+        end
+    end
+end
+function GoForward()
+    if not turtle.forward() then
+        turtle.dig()
+        turtle.forward()
+    end
+end
+
 function Mine()
+    GoDown()
     local success, block = turtle.inspectDown()
 
     if success then
@@ -62,6 +93,8 @@ function OnStart()
     width = read()
     print("Please enter the height. Then press enter.")
     height = read()
+    
+    z = height
     volume = length * width* height
 end
 
