@@ -102,6 +102,6 @@ OnStart()
 
 -- end on start function
 
-RefuelBot()
+RefuelBot() 
 Mine()
 
