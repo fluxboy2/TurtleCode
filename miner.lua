@@ -1,7 +1,6 @@
 keep_bot_going = true
 MAX_INV_SLOT_NUM = 16
 COAL_FUEL_AMOUNT = 80
-STARTING_BLOCK = nil
 
 length = 0
 width = 0
@@ -45,18 +44,12 @@ function RefuelBot()
     keep_bot_going = false
 end
 
-function FindMinMaxOfMiningZone()
-    turtle.select(2)
-    turtle.place()
-    turtle.select(1)
-    
+function Mine()
+    local success, block = turtle.inspectDown()
 
-    print(STARTING_BLOCK)
-
-    success, STARTING_BLOCK = turtle.inspect()
-
-    print(textutils.serialize(STARTING_BLOCK))
-    turtle.dig()
+    if success then
+        print(block.name)
+    end
 end
 
 -- start on start function
@@ -70,13 +63,12 @@ function OnStart()
     print("Please enter the height. Then press enter.")
     height = read()
     volume = length * width* height
-    FindMinMaxOfMiningZone()
 end
 
 OnStart()
 
 -- end on start function
--- turtle loop
-while keep_bot_going do
-    RefuelBot()
-end
+
+RefuelBot()
+Mine()
+
