@@ -50,6 +50,8 @@ function FindMinMaxOfMiningZone()
     turtle.place()
     turtle.select(1)
 
+    print(STARTING_BLOCK)
+    
     STARTING_BLOCK = turtle.inspect()
 
     print(STARTING_BLOCK)
