@@ -1,7 +1,7 @@
 keep_bot_going = true
 MAX_INV_SLOT_NUM = 16
 COAL_FUEL_AMOUNT = 80
-STARTING_BLOCK = turtle.inspectDown()
+STARTING_BLOCK = nil
 
 length = 0
 width = 0
@@ -46,7 +46,13 @@ function RefuelBot()
 end
 
 function FindMinMaxOfMiningZone()
-    print(STARTING_BLOCK[2])
+    turtle.select(2)
+    turtle.place()
+    turtle.select(1)
+
+    STARTING_BLOCK = turtle.inspect()
+
+    print(STARTING_BLOCK)
 end
 
 -- start on start function
