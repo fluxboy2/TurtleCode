@@ -46,7 +46,7 @@ function RefuelBot()
 end
 
 function FindMinMaxOfMiningZone()
-    print(textutils.serialize(STARTING_BLOCK))
+    print(STARTING_BLOCK)
 end
 
 -- start on start function
