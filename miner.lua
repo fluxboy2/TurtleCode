@@ -97,7 +97,7 @@ function OnStart()
     print("Please enter the height. Then press enter.")
     height = read()
     
-    z = height
+    z = tonumber(height)
     volume = length * width* height
 end
 
