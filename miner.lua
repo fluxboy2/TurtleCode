@@ -46,7 +46,7 @@ function RefuelBot()
 end
 
 function FindMinMaxOfMiningZone()
-    print(STARTING_BLOCK)
+    print(STARTING_BLOCK[2])
 end
 
 -- start on start function
